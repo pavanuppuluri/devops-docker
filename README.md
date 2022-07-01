@@ -30,5 +30,6 @@ Below are the basic commands -
 | docker <b>rm -f</b> CONTAINER | To force stop a running container <br> <br> <i>This is nothing but ... </i> <br><br>docker stop CONTAINER <br> docker rm CONTAINER  |
 | docker <b>rmi</b> IMAGE_NAME  | To remove an image. It frees up disk space  |
 | docker <b>COMMAND_NAME --help</b>  | To know about all available options for a given docker command |
+| docker <b>build</b>  | Build an image from a Dockerfile  |
 
 
