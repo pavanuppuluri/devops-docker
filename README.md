@@ -4,7 +4,7 @@ This repo contains docker commands and docker images of my projects along with s
 Docker is used to create, deploy,run applications in containers.
 Below are the basic commands -
 
-| Command       | Description   |
+| <b>Command</b>       | <b>Description</b>   |
 | ------------- | ------------- |
 | docker <b>version</b>  | To check the docker version  |
 | docker <b>search</b> IMAGE_NAME  | To search for a docker image in Docker Hub registry  |
@@ -23,7 +23,7 @@ Below are the basic commands -
 | docker <b>logs</b> CONTAINER | To fetch logs from a specified container. Used for debugging  |
 | docker <b>rm</b> CONTAINER | To remove a container  |
 | docker <b>rm -f</b> CONTAINER | To force stop a running container <br> <br> <i>This is nothing but ... </i> <br><br>docker stop CONTAINER <br> docker rm CONTAINER  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
+| docker <b>rmi</b> IMAGE_NAME  | To remove an image. It free up disk space  |
+| docker <b>COMMAND_NAME --help</b>  | To know about all available options for a given docker command |
+
+
