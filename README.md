@@ -13,6 +13,8 @@ Below are the basic commands -
 | docker <b>run --env</b> MYSQL_ROOT_PASSWORD=my-secret-pw mysql  | To set a mandatory environment variable  |
 | docker <b>run --detach</b> IMAGE_NAME  | To run the container in background  |
 | docker <b>run --name</b> CONTAINER_NAME IMAGE_NAME  | To assign a name to the container  |
+| docker <b>run -m</b> MEMORY_LIMIT CONTAINER_NAME IMAGE_NAME  | To specity memory limit for this container  |
+| docker <b>run --cpus</b> MEMORY_LIMIT CONTAINER_NAME IMAGE_NAME  | Number of CPUs for this container  |
 | docker <b>images</b>  | To list all docker images  |
 | docker <b>ps</b>  | To list all running containers  |
 | docker <b>ps -a</b>  | Lists all containers images including stopped containers  |
