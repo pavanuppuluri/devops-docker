@@ -31,5 +31,7 @@ Below are the basic commands -
 | docker <b>rmi</b> IMAGE_NAME  | To remove an image. It frees up disk space  |
 | docker <b>COMMAND_NAME --help</b>  | To know about all available options for a given docker command |
 | docker <b>build</b>  | Build an image from a Dockerfile  |
+| docker <b>attach</b> CONTAINER | To attach to a running container  |
+| docker <b>exec</b>  | To run a command in a running container <br> docker exec -it containerId /bin/sh <br> Above command lands us in shell  |
 
 
