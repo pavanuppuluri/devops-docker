@@ -40,6 +40,7 @@ Below are the basic commands -
 | <b>Dockerfile Instructions </b>  |
 | <b>CMD<b>  | To execute a command at runtime when the container is executed<br><br><b>Ex.</b>CMD [“echo” , “hello world”]  |
 | <b>ENTRYPOINT</b>  | ENTRYPOINT specifies a command that will always be executed when the container starts <br><br><b>ENTRYPOINT command param1</b>  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
+| CMD vs ENTRYPOINT  | The ENTRYPOINT specifies a command that will always be executed when the container starts. The CMD specifies arguments that will be fed to the ENTRYPOINT.<br><br><br>The tables below shows what command is executed for different ENTRYPOINT / CMD combinations: <br><br><b>No ENTRYPOINT</b><br><br> <table><tr><td>No CMD</td><td> error, not allowed</td></tr><tr><td> CMD ["exec_cmd", "p1_cmd"]</td><td>exec_cmd p1_cmd</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>p1_cmd p2_cmd</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>/bin/sh -c exec_cmd p1_cmd</td></tr></table>  |
+
+
 
