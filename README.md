@@ -37,9 +37,9 @@ Below are the basic commands -
 | docker attach vs docker exec | When you exit out of the attached STDIN then container also exits. It means there willn't be a running container process. <br> But that is not the case with docker exec <br><br> When you run an exec it basically spins up a new process in the running container <br> When you run an attach it lets you to attach to an existing process inside a container|
 | Detaching | Docker supports a keyboard combination to gracefully detach from a container. Press Ctrl-P, followed by Ctrl-Q, to detach from your connection <br><br> We may also define a separate key by –detach-keys option <br><br> docker attach --detach-keys="ctrl-x" CONTAINER| 
 | docker <b>inspect</b>  | It returns detailed, low-level information on Docker objects. Objects can be docker images, containers, networks, volumes, plugins, etc.  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
-| docker <b>images</b>  | To list all docker images  |
+| <b>Dockerfile Instructions </b>  |
+| <b>CMD<b>  | To execute a command at runtime when the container is executed<br><br><b>Ex.</b>CMD [“echo” , “hello world”]  |
+| <b>ENTRYPOINT</b>  | ENTRYPOINT specifies a command that will always be executed when the container starts <br><br><b>ENTRYPOINT command param1</b>  |
 | docker <b>images</b>  | To list all docker images  |
 | docker <b>images</b>  | To list all docker images  |
 
