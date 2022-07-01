@@ -31,6 +31,7 @@ Below are the basic commands -
 | docker <b>rmi</b> IMAGE_NAME  | To remove an image. It frees up disk space  |
 | docker <b>COMMAND_NAME --help</b>  | To know about all available options for a given docker command |
 | docker <b>build</b>  | Build an image from a Dockerfile  |
+| docker <b>build -t </b>IMAGE_NAME:TAG_NAME <b>dir</b>  | Build an image from a Dockerfile <br><br>-t − is to mention a tag to the image<br>IMAGE_NAME − This is the name you want to give to your image.<br>TAG_NAME − This is the tag you want to give to your image.<br>Dir − The directory where the Docker File is present.  |
 | docker <b>attach</b> CONTAINER | To attach our host system STDIN, STDOUT, STDERR with that of a running container  |
 | docker <b>exec</b>  | To run a command in a running container <br> <b>Ex.</b>docker exec -it containerId /bin/sh <br> Above command lands us in shell  |
 | docker attach vs docker exec | When you exit out of the attached STDIN then container also exits. It means there willn't be a running container process. <br> But that is not the case with docker exec <br><br> When you run an exec it basically spins up a new process in the running container <br> When you run an attach it lets you to attach to an existing process inside a container|
