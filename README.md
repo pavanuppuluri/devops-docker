@@ -20,3 +20,10 @@ Below are the basic commands -
 | docker <b>restart</b> [OPTIONS] CONTAINER [CONTAINER...]  | To restart one or more containers  |
 | docker <b>rename</b> CONTAINER_NAME NEW_NAME  | To rename container  |
 | docker <b>exec</b> -it CONTAINER bash | To access the running container. <br> bash is used to get a bash shell inside the container   |
+| docker <b>logs</b> CONTAINER | To fetch logs from a specified container. Used for debugging  |
+| docker <b>rm</b> CONTAINER | To remove a container  |
+| docker <b>rm -f</b> CONTAINER | To force stop a running container <br> <br> <i>This is nothing but ... </i> <br><br>docker stop CONTAINER <br> docker rm CONTAINER  |
+| docker <b>images</b>  | To list all docker images  |
+| docker <b>images</b>  | To list all docker images  |
+| docker <b>images</b>  | To list all docker images  |
+| docker <b>images</b>  | To list all docker images  |
