@@ -1,5 +1,5 @@
 # devops-docker
-This repo contains docker commands and docker images of my projects along with steps to them
+This repo contains docker commands and docker images of my projects along with steps to run them
 
 Docker is used to create, deploy,run applications in containers.
 <br>
