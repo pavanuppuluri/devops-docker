@@ -43,6 +43,11 @@ Docker is used to create, deploy,run applications in containers.
 | docker <b>inspect</b>  | It returns detailed, low-level information on Docker objects. Objects can be docker images, containers, networks, volumes, plugins, etc.  |
 |docker <b>cp</b>|Copy files/folders between a container and the local filesystem<br><br>docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|
 |docker <b>commit</b>|Create a new image from a container's changes|
+|docker <b>save</b>|To save an image to a tar file <br><br>docker save mysql > mysql.tar|
+|docker <b>load</b>|To load an image from an archive|
+|docker <b>pause</b>|To pause the processes running inside the container|
+|docker <b>unpause</b>|To unpause the processes in the container|
+|docker pause vs docker stop|docker stop: Send SIGTERM(termination signal), and if needed SIGKILL(kill signal)<br><br>docker pause: Send SIGSTOP(pause signal)<br><br><b>Ex.</b>Consider a container with a counter. Say your counter=3000 now. docker stop will cause the counter to lose its value. Using docker pause, on the other hand, will maintain the counter state and value.|
 
 
 <table>
