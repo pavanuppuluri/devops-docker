@@ -165,6 +165,19 @@ RUN <command> (shell form, the command is run in a shell, which by default is /b
       One way to establish the communication is exposing port<br><br>
       Other way is through Container Linking <br>
       <b>Note - </b>Recommended way - docker compose
+      <br><br>Docker container linking allows the recipient container to get connection information relating to the source container.
+      <br><br>
+      Two ways to establish communication between containers: <br>
+      1. Docker networking <br>
+      2. Docker container linking
+      <table>
+        <tr>
+          <td>Container Linking steps</td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </table>
     </td>
   </tr>
   </table>
