@@ -48,7 +48,8 @@ Docker is used to create, deploy,run applications in containers.
 |docker <b>pause</b>|To pause the processes running inside the container|
 |docker <b>unpause</b>|To unpause the processes in the container|
 |docker pause vs docker stop|docker stop: Send SIGTERM(termination signal), and if needed SIGKILL(kill signal)<br><br>docker pause: Send SIGSTOP(pause signal)<br><br><b>Ex.</b>Consider a container with a counter. Say your counter=3000 now. docker stop will cause the counter to lose its value. Using docker pause, on the other hand, will maintain the counter state and value.|
-
+|docker <b>kill</b>|Lills one or more containers. <br><br>The main process inside the container is sent `SIGKILL` signal|
+|docker stop vs docker kill|docker stop issues `SIGTERM` signal. SIGTERM gracefully terminates a process rather than killing it immediately <br><br>  docker kill issues `SIGKILL` signal. It kills a running container. It will stop the main entrypoint process/program abruptly |
 
 <table>
   <td colspan=2><b>Dockerfile Instructions </b> </td>
