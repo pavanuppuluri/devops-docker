@@ -136,7 +136,7 @@ Docker is used to create, deploy,run applications in containers.
       <tr>
     <td>Extract a tar from source to Docker image</td>
     <td>No</td>
-    <td>Yesd>
+    <td>Yes</td>
   </tr>
   </table>
   
