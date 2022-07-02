@@ -160,25 +160,25 @@ RUN <command> (shell form, the command is run in a shell, which by default is /b
       Container Linking
     </td>
     <td>
-      By linking containers, you provide a secure channel via which Docker containers can communicate to each other<br><br>
-      Say we have a Web Server and Database Server running in Docker containers<br><br>
-      One way to establish the communication is exposing port<br><br>
-      Other way is through Container Linking <br>
+      By linking containers, Docker containers can communicate to each other<br><br>      
+      1. One way to establish the communication is exposing port<br>
+      2. Other way is through Container Linking <br>
+      3. docker compose <br>
       <b>Note - </b>Recommended way - docker compose
-      <br><br>Docker container linking allows the recipient container to get connection information relating to the source container.
       <br><br>
-      Two ways to establish communication between containers: <br>
-      1. Docker networking <br>
-      2. Docker container linking
-      <table>
-        <tr>
-          <td>Container Linking steps</td>
-        </tr>
-        <tr>
-          <td></td>
-        </tr>
-      </table>
-    </td>
+      - Docker container linking can be used when we are using default bridge networks and when want to share environmental variables.<br>
+      - Docker container linking relies on container names to establish links between the containers <br>
+      - So naming of containers is necessary <br>
+      - We can use the --name flag to name a container <br>
+      - Communication across links is achieved through two main ways <br>
+      1. Sharing of the environmental variables from the source container to target container.<br>
+      2. Updating the /etc/hosts file <br><br><br>
+      
+<table><tr><td>Container Linking steps</td></tr><tr><td>1. Say we have a Web Server, Database running in different docker containers <br>  
+          2. Let’s assume we have two containers named db and web <br>
+          3. docker run -d --name db training/postgres <br>
+  4. docker run -d -P --name web <b>--link</b> db:db training/webapp python app.py
+         </td></tr></table><br><br>So what does linking the containers actually do? A link allows a source container to provide information about itself to a recipient container. In our example, the recipient, web, can access information about the source db. To do this, Docker creates a secure tunnel between the containers that doesn’t need to expose any ports externally on the container; when we started the db container we did not use either the -P or -p flags. That’s a big benefit of linking: we don’t need to expose the source container, here the PostgreSQL database, to the network.<br><br></td>
   </tr>
   </table>
   
