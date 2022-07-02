@@ -59,6 +59,7 @@ Docker is used to create, deploy,run applications in containers.
 |docker <b>top</b> CONTAINER [ps OPTIONS]|Display the running processes of a container|
 |docker <b>stats</b> CONTAINER|It gets the statistics of a running container|
 |docker <b>tag</b> IMAGE REPOSITORY_NAME|To tag an image to the given repository|
+|docker <b>-p</b> 8080:8080 jenkins|Map port 8080 in the container to port 8080 on the Docker host|
   
 
 <table>
