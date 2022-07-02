@@ -55,7 +55,8 @@ Docker is used to create, deploy,run applications in containers.
 |docker stop vs docker kill|docker stop issues `SIGTERM` signal. SIGTERM gracefully terminates a process rather than killing it immediately <br><br>  docker kill issues `SIGKILL` signal. It kills a running container. It will stop the main entrypoint process/program abruptly |
 |docker <b>copy</b> |To copy a file or directory from your host to docker image|
 |docker <b>add</b>|The ADD command is used to copy files/directories into a Docker image. It can copy data in three ways:<br>Copy files from the local storage to a destination in the Docker image<br>Copy a tarball from the local storage and extract it automatically inside a destination in the Docker image <br>Copy files from a URL to a destination inside the Docker image|   
-|docker copy vs docker add|<table><tr><td></td><td><b>COPY</b></td><td><b>ADD</b></td></tr><tr><td>Copy a local file or directory</td><td>Yes</td>   <td>Yes</td></tr><tr><td>Download a file from URL to Docker image</td><td>No</td><td>Yes</td></tr><tr><td>Extract a tar from source to Docker image</td> <td>No</td><td>Yes</td></tr></table>|    
+|docker copy vs docker add|<table><tr><td></td><td><b>COPY</b></td><td><b>ADD</b></td></tr><tr><td>Copy a local file or directory</td><td>Yes</td>   <td>Yes</td></tr><tr><td>Download a file from URL to Docker image</td><td>No</td><td>Yes</td></tr><tr><td>Extract a tar from source to Docker image</td> <td>No</td><td>Yes</td></tr></table>|
+|docker <b>top</b> CONTAINER [ps OPTIONS]|Display the running processes of a container|
   
 
 <table>
