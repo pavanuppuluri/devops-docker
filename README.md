@@ -120,12 +120,26 @@ RUN <command> (shell form, the command is run in a shell, which by default is /b
   </table>
   
   <table>
-  <td colspan=2><b>Docker Networking </b> </td>
+  <td colspan=2 align="center"><b>Docker Networking </b> </td>
   <tr>
   <td>
+    docker <b>network ls</b>
     </td>
     <td>
+      It lists all the networks associated with Docker on the host
     </td>
+  </tr>
+  <tr>
+    <td>
+      docker <b>network inspect networkname</b>
+    </td>
+    <td>
+      To get all the details of a network
+    </td>
+  </tr>
+  <tr>
+    <td>docker <b>network create –-driver drivername name</b></td>
+    <td>To create a new network</td>
   </tr>
   </table>
   
