@@ -93,8 +93,54 @@ Docker is used to create, deploy,run applications in containers.
       Used to set the working directory of the container <br><br><b>Ex.</b><br>FROM ubuntu<br>WORKDIR /newtemp<br>CMD pwd
     </td>
   </tr>
-</table>
+  <tr>
+    <td>
+      docker <b>copy</b>
+    </td>
+    <td>
+      To copy a file or directory from your host to docker image
+    </td>
+  </tr>
+   <tr>
+    <td>
+      docker <b>add</b>
+    </td>
+    <td>
+      The ADD command is used to copy files/directories into a Docker image. It can copy data in three ways:
+      <br>Copy files from the local storage to a destination in the Docker image
+      <br>Copy a tarball from the local storage and extract it automatically inside a destination in the Docker image
+      <br>Copy files from a URL to a destination inside the Docker image
+    </td>
+  </tr>
+  <tr>
+<td>
+  docker copy vs docker add
+  </td>
+  <td>
+<table>
+    <tr>
+    <td></td>
+      <td><b>COPY</b></td>
+      <td><b>ADD</b></td>
+  </tr>
+      <tr>
+    <td>Copy a local file or directory</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+      <tr>
+    <td>Download a file from URL to Docker image</td>
+    <td>No</td>
+    <td>Yes</td>
+  </tr>
+      <tr>
+    <td>Extract a tar from source to Docker image</td>
+    <td>No</td>
+    <td>Yesd>
+  </tr>
+  </table>
   
-  
-  
+  </td>
+  </tr>
+  </table>
   
