@@ -54,9 +54,28 @@ Docker is used to create, deploy,run applications in containers.
 
 <table>
   <td colspan=2><b>Dockerfile Instructions </b> </td>
+   <tr>
+    <td><b>RUN</b></td>
+    <td>The RUN instruction will execute any commands in a new layer on top of the current image and commit the results. The resulting committed image will be used for the next step in the Dockerfile
+     <br><br>
+     RUN has 2 forms:
+<br>
+RUN <command> (shell form, the command is run in a shell, which by default is /bin/sh -c on Linux or cmd /S /C on Windows)
+<br>RUN ["executable", "param1", "param2"] (exec form)</td>
+  </tr>
   <tr>
     <td><b>CMD</b></td>
     <td>To execute a command at runtime when the container is executed<br><br><b>Ex.</b>CMD [“echo” , “hello world”]</td>
+  </tr>
+  <tr>
+    <td>
+      RUN vs CMD
+    </td>
+    <td>
+      <br>RUN is an image build step, the state of the container after a RUN command will be committed to the container image. A Dockerfile can have many RUN steps that layer on top of one another to build the image.
+      <br>
+<br>CMD is the command the container executes by default when you launch the built image. A Dockerfile will only use the final CMD defined. <br>The CMD can be overridden when starting a container with <b>docker run $image $other_command</b>.
+    </td>
   </tr>
   <tr>
     <td><b>ENTRYPOINT</b></td>
