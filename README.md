@@ -42,6 +42,7 @@ Docker is used to create, deploy,run applications in containers.
 | Detaching | Docker supports a keyboard combination to gracefully detach from a container. Press Ctrl-P, followed by Ctrl-Q, to detach from your connection <br><br> We may also define a separate key by –detach-keys option <br><br> docker attach --detach-keys="ctrl-x" CONTAINER| 
 | docker <b>inspect</b>  | It returns detailed, low-level information on Docker objects. Objects can be docker images, containers, networks, volumes, plugins, etc.  |
 |docker <b>cp</b>|Copy files/folders between a container and the local filesystem<br><br>docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|
+|docker <b>commit</b>|Create a new image from a container's changes|
 
 
 <table>
