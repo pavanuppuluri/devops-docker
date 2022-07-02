@@ -22,8 +22,9 @@ Docker is used to create, deploy,run applications in containers.
 | docker <b>images</b>  | To list all docker images  |
 | docker <b>ps</b>  | To list all running containers  |
 | docker <b>ps -a</b>  | Lists all containers images including stopped containers  |
+| docker <b>create</b>|It creates a new container from the specified image, without starting it|
 | docker <b>start</b> [OPTIONS] CONTAINER [CONTAINER...]  | To start one or more existing containers  |
-| docker <b>run</b> vs docker <b>start</b> | | docker run creates a Container from the image and runs it. <br> docker start launches a container previously stopped
+| docker <b>run</b> vs docker <b>start</b> | docker run creates a Container from the image and runs it. <br> docker start launches a container previously stopped <br><br>Docker run command is a combination of create and start as it creates a new container and starts it immediately|
 | docker <b>stop</b> CONTAINER_NAME/CONTAINER_ID  | To stop a running container  |
 | docker <b>restart</b> [OPTIONS] CONTAINER [CONTAINER...]  | To restart one or more containers  |
 | docker <b>start</b> vs docker <b>restart</b> CONTAINER  | The docker restart command will issue a stop and then a start. <br>If the container is already stopped, it is same as docker start  |
