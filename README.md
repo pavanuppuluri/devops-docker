@@ -57,6 +57,7 @@ Docker is used to create, deploy,run applications in containers.
 |docker <b>add</b>|The ADD command is used to copy files/directories into a Docker image. It can copy data in three ways:<br>Copy files from the local storage to a destination in the Docker image<br>Copy a tarball from the local storage and extract it automatically inside a destination in the Docker image <br>Copy files from a URL to a destination inside the Docker image|   
 |docker copy vs docker add|<table><tr><td></td><td><b>COPY</b></td><td><b>ADD</b></td></tr><tr><td>Copy a local file or directory</td><td>Yes</td>   <td>Yes</td></tr><tr><td>Download a file from URL to Docker image</td><td>No</td><td>Yes</td></tr><tr><td>Extract a tar from source to Docker image</td> <td>No</td><td>Yes</td></tr></table>|
 |docker <b>top</b> CONTAINER [ps OPTIONS]|Display the running processes of a container|
+|docker <b>stats</b> CONTAINER|It gets the statistics of a running container|
   
 
 <table>
