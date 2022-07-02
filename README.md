@@ -37,13 +37,51 @@ Below are the basic commands -
 | docker attach vs docker exec | When you exit out of the attached STDIN then container also exits. It means there willn't be a running container process. <br> But that is not the case with docker exec <br><br> When you run an exec it basically spins up a new process in the running container <br> When you run an attach it lets you to attach to an existing process inside a container|
 | Detaching | Docker supports a keyboard combination to gracefully detach from a container. Press Ctrl-P, followed by Ctrl-Q, to detach from your connection <br><br> We may also define a separate key by –detach-keys option <br><br> docker attach --detach-keys="ctrl-x" CONTAINER| 
 | docker <b>inspect</b>  | It returns detailed, low-level information on Docker objects. Objects can be docker images, containers, networks, volumes, plugins, etc.  |
-| <b>Dockerfile Instructions </b>  |
-| <b>CMD<b>  | To execute a command at runtime when the container is executed<br><br><b>Ex.</b>CMD [“echo” , “hello world”]  |
-| <b>ENTRYPOINT</b>  | ENTRYPOINT specifies a command that will always be executed when the container starts <br><br><b>ENTRYPOINT command param1</b>  |
-| CMD vs ENTRYPOINT  | The ENTRYPOINT specifies a command that will always be executed when the container starts. The CMD specifies arguments that will be fed to the ENTRYPOINT.<br><br><br>The tables below shows what command is executed for different ENTRYPOINT / CMD combinations: <br><br><b>No ENTRYPOINT</b><br><br> <table><tr><td>No CMD</td><td> error, not allowed</td></tr><tr><td> CMD ["exec_cmd", "p1_cmd"]</td><td>exec_cmd p1_cmd</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>p1_cmd p2_cmd</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>/bin/sh -c exec_cmd p1_cmd</td></tr></table>  <br><br><b>ENTRYPOINT exec_entry p1_entry</b><br><br><table><tr><td>No CMD</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD ["exec_cmd", "p1_cmd"]</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>/bin/sh -c exec_entry p1_entry</td></tr></table><br><br><b>ENTRYPOINT ["exec_entry", "p1_entry"]</b><br><br><table><tr><td>No CMD</td><td>exec_entry p1_entry</td></tr><tr><td>CMD ["exec_cmd", "p1_cmd"]</td><td>exec_entry p1_entry exec_cmd p1_cmd</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>exec_entry p1_entry p1_cmd p2_cmd</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd</td></tr></table> |
-| <b>ENV</b>  | To set environment variables in the container <br><br><b>Ex.</b><br>FROM ubuntu<br>ENV VAR=value <br><br> There are 2 ways to set the environment variables <table><tr><td>ENV key value</td><td>It will set a single variable to a value</td></tr><tr><td>ENV key1=value1 ...</td><td> It allows for multiple variables to be set at one time</td></tr></table>|
-| <b>ARG</b>  | ARG is for setting build time variables. It will set environments only during the build<br>ARG is the only instruction that may precede FROM in the Dockerfile<br>Running containers can't access values of ARG variables<br><br><b>Ex.</b><br>FROM ubuntu<br>ARG VAR value |
-|<b>WORKDIR</b>|Used to set the working directory of the container <br><br><b>Ex.</b><br>FROM ubuntu<br>WORKDIR /newtemp<br>CMD pwd|
+
+
+<table>
+  <td colspan=2><b>Dockerfile Instructions </b> </td>
+  <tr>
+    <td><b>CMD</b></td>
+    <td>To execute a command at runtime when the container is executed<br><br><b>Ex.</b>CMD [“echo” , “hello world”]</td>
+  </tr>
+  <tr>
+    <td><b>ENTRYPOINT</b></td>
+    <td>ENTRYPOINT specifies a command that will always be executed when the container starts <br><br><b>ENTRYPOINT command param1</b></td>
+  </tr>
+<tr>
+  <td>
+    CMD vs ENTRYPOINT
+  </td>
+  <td>
+    The ENTRYPOINT specifies a command that will always be executed when the container starts. The CMD specifies arguments that will be fed to the ENTRYPOINT.<br><br><br>The tables below shows what command is executed for different ENTRYPOINT / CMD combinations: <br><br><b>No ENTRYPOINT</b><br><br> <table><tr><td>No CMD</td><td> error, not allowed</td></tr><tr><td> CMD ["exec_cmd", "p1_cmd"]</td><td>exec_cmd p1_cmd</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>p1_cmd p2_cmd</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>/bin/sh -c exec_cmd p1_cmd</td></tr></table>  <br><br><b>ENTRYPOINT exec_entry p1_entry</b><br><br><table><tr><td>No CMD</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD ["exec_cmd", "p1_cmd"]</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>/bin/sh -c exec_entry p1_entry</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>/bin/sh -c exec_entry p1_entry</td></tr></table><br><br><b>ENTRYPOINT ["exec_entry", "p1_entry"]</b><br><br><table><tr><td>No CMD</td><td>exec_entry p1_entry</td></tr><tr><td>CMD ["exec_cmd", "p1_cmd"]</td><td>exec_entry p1_entry exec_cmd p1_cmd</td></tr><tr><td>CMD ["p1_cmd", "p2_cmd"]</td><td>exec_entry p1_entry p1_cmd p2_cmd</td></tr><tr><td>CMD exec_cmd p1_cmd</td><td>exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd</td></tr></table>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <b>ENV</b>
+    </td>
+    <td>
+      To set environment variables in the container <br><br><b>Ex.</b><br>FROM ubuntu<br>ENV VAR=value <br><br> There are 2 ways to set the environment variables <table><tr><td>ENV key value</td><td>It will set a single variable to a value</td></tr><tr><td>ENV key1=value1 ...</td><td> It allows for multiple variables to be set at one time</td></tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>ARG</b>
+    </td>
+    <td>
+      ARG is for setting build time variables. It will set environments only during the build<br>ARG is the only instruction that may precede FROM in the Dockerfile<br>Running containers can't access values of ARG variables<br><br><b>Ex.</b><br>FROM ubuntu<br>ARG VAR value
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>WORKDIR</b>
+    </td>
+    <td>
+      Used to set the working directory of the container <br><br><b>Ex.</b><br>FROM ubuntu<br>WORKDIR /newtemp<br>CMD pwd
+    </td>
+  </tr>
+</table>
   
   
   
