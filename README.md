@@ -2,7 +2,11 @@
 This repo contains docker commands and docker images of my projects along with steps to them
 
 Docker is used to create, deploy,run applications in containers.
-Below are the basic commands -
+<br>
+<br>
+<b>Docker commands</b>
+<br>
+<br>
 
 | <b>Command</b>       | <b>Description</b>   |
 | ------------- | ------------- |
