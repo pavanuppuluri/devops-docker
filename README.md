@@ -161,19 +161,10 @@ RUN <command> (shell form, the command is run in a shell, which by default is /b
     </td>
     <td>
       By linking containers, you provide a secure channel via which Docker containers can communicate to each other<br><br>
-      Say we have a Web Server and Database Server running in Docker containers<br>
-      One way to establish the communication is exposing port<br>
-      Container Linking is generic and portable way of linking the containers together rather than via the networking port
-      <table>
-        <tr>
-        <td>
-          docker pull redis
-          
-        </td>
-        </tr>
-        <table>
-      
-      <b>Note</b>Recommended way - docker compose
+      Say we have a Web Server and Database Server running in Docker containers<br><br>
+      One way to establish the communication is exposing port<br><br>
+      Other way is through Container Linking <br>
+      <b>Note - </b>Recommended way - docker compose
     </td>
   </tr>
   </table>
