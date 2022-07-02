@@ -62,6 +62,14 @@ Docker is used to create, deploy,run applications in containers.
 
 <table>
   <td colspan=2 align="center"><b>Dockerfile Instructions </b> </td>
+  <tr>
+    <td>
+      <b>FROM</b>
+    </td>
+    <td>
+      This is the base image used to build our docker image
+    </td>
+  </tr>
    <tr>
     <td><b>RUN</b></td>
     <td>The RUN instruction will execute any commands in a new layer on top of the current image and commit the results. The resulting committed image will be used for the next step in the Dockerfile
