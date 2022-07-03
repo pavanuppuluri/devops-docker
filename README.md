@@ -60,7 +60,7 @@ Docker is used to create, deploy,run applications in containers.
 |docker <b>stats</b> CONTAINER|It gets the statistics of a running container|
 |docker <b>tag</b> IMAGE REPOSITORY_NAME|To tag an image to the given repository|
 |docker <b>-p</b> 8080:8080 jenkins|Map port 8080 in the container to port 8080 on the Docker host|
-  
+|docker <b>info</b>|Displays system wide information including the kernel version, number of containers, images, storage information etc..|  
 
 <table>
   <td colspan=2 align="center"><b>Dockerfile Instructions </b> </td>
@@ -182,3 +182,8 @@ RUN <command> (shell form, the command is run in a shell, which by default is /b
   </tr>
   </table>
   
+<br><br><br>
+<table>
+  <tr><td colspan=2 align="center"><b>Bind Mounts & Docker Volumes</b> </td></tr>
+  <tr><td colspan=2><br>Docker containers run in an isolated environment<br>It means all the changes inside the containers are lost when the container is stopped<br>What if we want to retain the data? Use docker volumes and bind mounts<br><b>Ex.</b><br>docker run bash:latest bash -c "echo Hi! > file.txt && cat file.txt"<br> <b>Output:</b> Hi!<br><br>If we run the same image again and try to read file.txt<br>docker run bash:latest bash -c "cat file.txt" <br> <b>Output:</b> No such file or directory<br></td></tr><tr><td colspan=2><br><b>Bind Mounts</b><br>Bind mount allows the host to share its own file system with the container, which can be made read-only or read-write</td></tr>
+</table>
